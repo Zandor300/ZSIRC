@@ -1,5 +1,6 @@
 package com.zandor300.zsirc.enums;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +19,8 @@ public class Client {
 
 	private final String ip;
 	private final int port;
+
+	private PrintWriter out;
 
 	public Client(String username, String realName, String email, String ip, int port) {
 		this.username = username;
@@ -51,6 +54,10 @@ public class Client {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public PrintWriter getPrintWriter() {
+		return out;
 	}
 
 }

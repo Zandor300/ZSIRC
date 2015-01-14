@@ -1,5 +1,7 @@
 package com.zandor300.zsirc;
 
+import com.zandor300.zsirc.enums.Client;
+
 import java.io.PrintWriter;
 import java.util.LinkedList;
 
@@ -16,9 +18,9 @@ public class Mediator {
 
 	public void writeMessage(String message) {
 		System.out.println("Recieved message: " + message);
-		for(PrintWriter out : connections) {
-			out.println(message);
-			out.flush();
+		for(Client client : Client.getAllClients()) {
+			client.getPrintWriter().println(message);
+			client.getPrintWriter().flush();
 		}
 	}
 
